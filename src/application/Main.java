@@ -23,5 +23,21 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		
+		
 	}
+	
+	static int pwr(int a, int b)
+	{
+		int p = 1;
+		int i = 0;
+		while (i < b)
+		{
+			p = p*a;
+			i = i+1;
+		}
+		return p;
+	}
+	
+	
 }

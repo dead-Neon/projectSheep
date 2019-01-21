@@ -1,20 +1,23 @@
 package application;
 
+import java.io.File;
 import java.net.URL;
 import javafx.scene.image.*;
 
 public class Picture{
 	
-	URL location;
+	File location;
 	int height, width;
 	Image image;
 	
-	Picture(URL location, Image image, int height, int width)
+	Picture(File location)
 	{
 		this.location = location;
-		this.height = height;
-		this. width = width;
-		this.image = image;
+	}
+	
+	public String toString()
+	{
+		return location.toString();
 	}
 	
 }

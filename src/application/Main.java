@@ -8,6 +8,8 @@ import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
+	Stage primaryStage;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -27,17 +29,15 @@ public class Main extends Application {
 		
 	}
 	
-	static int pwr(int a, int b)
+	public double getHeight()
 	{
-		int p = 1;
-		int i = 0;
-		while (i < b)
-		{
-			p = p*a;
-			i = i+1;
-		}
-		return p;
+		return primaryStage.getHeight();
 	}
+	public double getWidth()
+	{
+		return primaryStage.getWidth();
+	}
+	
 	
 	
 }

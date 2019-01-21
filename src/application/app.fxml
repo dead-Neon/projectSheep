@@ -49,13 +49,16 @@
                <children>
                   <VBox prefHeight="351.5" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane prefHeight="300.0" prefWidth="200.0">
+                        <AnchorPane prefHeight="300.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                            <children>
                               <TabPane layoutX="14.0" prefHeight="226.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <tabs>
                                   <Tab text="Original">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                      <AnchorPane minHeight="200.0">
+                                             <children>
+                                                <ImageView fx:id="activeImage" pickOnBounds="true" preserveRatio="true" />
+                                             </children></AnchorPane>
                                     </content>
                                   </Tab>
                                   <Tab text="Greyscale">
@@ -82,7 +85,7 @@
                               </TabPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="251.0" prefWidth="600.0" style="-fx-background-color: #f2f2f2;" />
+                        <AnchorPane minHeight="250.0" prefWidth="600.0" style="-fx-background-color: #f2f2f2;" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
                </children>
@@ -104,12 +107,12 @@
                                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                  </padding>
                               </TextField>
-                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="3.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="21.0" style="-fx-background-radius: 0;" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="167.0" layoutY="3.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#addImage" prefHeight="21.0" prefWidth="21.0" style="-fx-background-radius: 0;" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
                                  <padding>
                                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                  </padding>
                                  <graphic>
-                                    <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="12.0" fitWidth="12.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/add.png" />
                                        </image>
@@ -130,11 +133,11 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefWidth="140.0">
+                        <AnchorPane prefHeight="519.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <ScrollPane layoutX="-36.0" layoutY="14.0" prefHeight="524.5" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <content>
-                                    <VBox prefWidth="140.0" />
+                                    <VBox fx:id="imageList" prefHeight="522.0" prefWidth="180.0" />
                                  </content>
                               </ScrollPane>
                            </children>

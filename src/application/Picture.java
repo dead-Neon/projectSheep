@@ -1,28 +1,19 @@
 package application;
 
-import java.io.File;
 import javafx.scene.image.*;
 
-public class Picture{
+public class Picture extends ImageView{
 	
-	File location;
 	int height, width;
 	Image image;
 	
-	Picture(File location)
+	Picture(Image image)
 	{
-		this.location = location;
+		setImage(image);
+		height = (int)image.getHeight();
+		width = (int)image.getWidth();
 	}
 	
-	public String toString()
-	{
-		return location.toString();
-	}
-	
-	public File getLocation()
-	{
-		return location;
-	}
 	
 	
 }

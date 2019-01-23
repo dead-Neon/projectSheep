@@ -12,7 +12,7 @@ import javafx.scene.layout.Pane;
 
 public class Main extends Application {
 	Stage primaryStage;
-	static LinkedList<ImageView> pictures = new LinkedList<>();
+	static LinkedList<Picture> pictures = new LinkedList<>();
 	
 	@Override
 	public void start(Stage primaryStage) {

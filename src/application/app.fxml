@@ -6,8 +6,6 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
@@ -42,7 +40,23 @@
             </MenuBar>
          </top>
          <right>
-            <VBox minWidth="125.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #333333;" BorderPane.alignment="CENTER" />
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="controlPane" minWidth="125.0" prefHeight="551.5" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #333333;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#greyscale" prefWidth="200.0" text="Greyscale" />
+                        <Button mnemonicParsing="false" onAction="#redFilter" prefWidth="200.0" text="Red Filter" />
+                        <Button mnemonicParsing="false" onAction="#greenFilter" prefWidth="200.0" text="Green Filter" />
+                        <Button mnemonicParsing="false" onAction="#blueFilter" prefWidth="200.0" text="Blue Filter" />
+                        <Button mnemonicParsing="false" prefWidth="200.0" text="?" />
+                        <Button mnemonicParsing="false" prefWidth="200.0" text="Something" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
          </right>
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #666666;" BorderPane.alignment="CENTER">
@@ -51,43 +65,16 @@
                      <children>
                         <AnchorPane prefHeight="300.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <TabPane layoutX="14.0" prefHeight="226.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <tabs>
-                                  <Tab text="Original">
-                                    <content>
-                                      <AnchorPane minHeight="200.0">
-                                             <children>
-                                                <ImageView fx:id="activeImage" pickOnBounds="true" preserveRatio="true" />
-                                             </children></AnchorPane>
-                                    </content>
-                                  </Tab>
-                                  <Tab text="Greyscale">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </Tab>
-                                    <Tab text="Red">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </Tab>
-                                    <Tab text="Green">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </Tab>
-                                    <Tab text="Blue">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </Tab>
-                                </tabs>
-                              </TabPane>
+                              <HBox alignment="CENTER" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fx:id="activeImage" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="250.0" prefWidth="600.0" style="-fx-background-color: #f2f2f2;" VBox.vgrow="ALWAYS">
                            <children>
-                              <BorderPane layoutX="-8.0" layoutY="-35.0" prefHeight="250.5" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <BorderPane fx:id="infoPane" layoutX="-8.0" layoutY="-35.0" prefHeight="250.5" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children></AnchorPane>
                      </children>
                   </VBox>

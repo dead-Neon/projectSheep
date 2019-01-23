@@ -1,14 +1,18 @@
 package application;
 	
+import java.util.LinkedList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
 	Stage primaryStage;
+	static LinkedList<ImageView> pictures = new LinkedList<>();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -37,6 +41,8 @@ public class Main extends Application {
 	{
 		return primaryStage.getWidth();
 	}
+	
+	
 	
 	
 	

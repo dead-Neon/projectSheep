@@ -1,7 +1,6 @@
 package application;
 
 import java.io.File;
-import java.net.URL;
 import javafx.scene.image.*;
 
 public class Picture{
@@ -19,5 +18,11 @@ public class Picture{
 	{
 		return location.toString();
 	}
+	
+	public File getLocation()
+	{
+		return location;
+	}
+	
 	
 }

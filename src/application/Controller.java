@@ -1,13 +1,10 @@
 package application;
 
 import java.io.File;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -24,13 +21,8 @@ public class Controller {
     void addImage(ActionEvent event) {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.getExtensionFilters().addAll(
-				        new ExtensionFilter("PNG Files", "*.png", "JPG Files", "*.jpg"));
+				        new ExtensionFilter("PNG/JPG Files", "*.png", "*.jpg"));
 		File selectedFile = fileChooser.showOpenDialog(null);
-		Picture picture = new Picture(selectedFile);
-		
-		
-		
-		
 		Image image = new Image(selectedFile.toURI().toString(),
 			    activeImage.getFitWidth(), // requested width
 			    activeImage.getFitHeight(), // requested height
@@ -39,15 +31,28 @@ public class Controller {
 			    true // load in background
 			);
 		activeImage.setImage(image);
-		image = new Image(selectedFile.toURI().toString(),
-			    180, // requested width
-			    180, // requested height
-			    true, // preserve ratio
-			    true, // smooth rescaling
-			    true // load in background
-			);
 		ImageView selectedImage = new ImageView();
 		selectedImage.setImage(image);
-		imageList.getChildren().add(selectedImage);
+		Main.pictures.add(selectedImage);
+		selectedImage.setOnMouseClicked(e -> setOnMouseClicked(selectedImage));
+		updateImageList();
     }
+	
+	public final void setOnMouseClicked(ImageView imageView)
+	{
+		Image image = imageView.getImage();
+		activeImage.setImage(image);
+	}
+	
+	void updateImageList()
+	{
+		imageList.getChildren().clear();
+		for (int i = 0; i < Main.pictures.size(); i++)
+		{
+			ImageView temp = Main.pictures.get(i);
+			temp.setFitWidth(160);
+			temp.setPreserveRatio(true);
+			imageList.getChildren().add(temp);
+		}
+	}
 }

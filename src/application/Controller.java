@@ -115,10 +115,7 @@ public class Controller {
     	for (int i = 0; i < width; i++) { 
     		for (int j = 0; j < height; j++) {
     			Color newColor = newImage.getPixelReader().getColor(j, i);
-    			if ()
-    			{
-    				
-    			}
+    			
     			newColor = newColor.grayscale();
     			newImage.getPixelWriter().setColor(j, i, newColor);
     		}

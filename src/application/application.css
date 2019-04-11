@@ -1,3 +1,11 @@
 .button {
 	-fx-background-radius: 0;
 }
+
+.rect {
+	-fx-border-radius:4px; 
+}
+
+.rectangle {
+	-fx-border-radius:4px; 
+}
